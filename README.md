@@ -26,27 +26,27 @@ Todas as arestas terão peso 1 no dígrafo, portanto, é um dígrafo sem peso! I
 
 O exercício deverá receber como entrada dados da entrada padrão (System.in), na seguinte formatação:<br>
 <ul>
- <li>Nv- Número de vértices que serão lidos a seguir (int)<\li>
- <li>\n<\li>
-<\ul>
+ <li>Nv- Número de vértices que serão lidos a seguir (int)</li>
+ <li>\n</li>
+</ul>
 Por Nv vezes:<br>
 <ul>
- <li>Nome da quest (String)<\li>
+ <li>Nome da quest (String)</li>
  <li>\n<\li>
- <li>Descrição da quest (String)<\li>
- <li>\n<\li>
-<\ul> 
+ <li>Descrição da quest (String)</li>
+ <li>\n</li>
+</ul> 
 Após Nv quests:<br>
 <ul>
- <li>Na - Número de arestas que serão lidas a seguir (int)<\li>
- <li>\n<\li>
-<\ul>
+ <li>Na - Número de arestas que serão lidas a seguir (int)</li>
+ <li>\n</li>
+</ul>
 Por Na vezes:<br>
 <ul>
-  <li>ID do vértice de origem da aresta(int)<\li>
-  <li>ID do vértice de destino da aresta(int)<\li>
-  <li>\n<\li>
-<\ul>    
+  <li>ID do vértice de origem da aresta(int)</li>
+  <li>ID do vértice de destino da aresta(int)</li>
+  <li>\n</li>
+</ul>    
 Após Na arestas:<br>
 <ul>
   <li>ID do vértice inicial da travessia (int)</li>
