@@ -11,10 +11,10 @@ Qual é a ideia? Ler o arquivo que contém os vértices e arestas do dígrafo, c
 
 Cada quest, que são os vértices do dígrafo, tem 3 campos:<br>
 <ul>
-<li>Nome-String</li>
-<li>Descrição\t-String</li>
-<li>ID\tint</li>
- </ul>
+ <li>Nome-String</li>
+ <li>Descrição\t-String</li>
+ <li>ID\tint</li>
+</ul>
 O nome e a descrição estão contidos no arquivo de entrada. Porém, o ID é um inteiro que você deve manter como uma variável de controle no seu código: A primeira quest lida e colocada no dígrafo deve receber o ID 0, a segunda o ID 1, e assim sucessivamente.<br>
 <b>Importante:</b><br>
 Todas as arestas terão peso 1 no dígrafo, portanto, é um dígrafo sem peso! Insira as arestas com peso 1, ou modifique a nossa função de inserção de arestas para não precisar de peso.
@@ -28,7 +28,7 @@ O exercício deverá receber como entrada dados da entrada padrão (System.in), 
 <ul>
  <li>Nv- Número de vértices que serão lidos a seguir (int)<\li>
  <li>\n<\li>
-<\li>
+<\ul>
 Por Nv vezes:<br>
 <ul>
  <li>Nome da quest (String)<\li>
