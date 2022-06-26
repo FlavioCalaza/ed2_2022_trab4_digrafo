@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a38bfc8-4b15-44cd-8647-ba1a8eb0b519" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="6a38bfc8-4b15-44cd-8647-ba1a8eb0b519" name="Changes" comment="Update README.md">
+      <change afterPath="$PROJECT_DIR$/casos_teste/1.in" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casos_teste/1.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casos_teste/2.in" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casos_teste/2.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casos_teste/3.in" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casos_teste/3.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casos_teste/4.in" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casos_teste/4.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casos_teste/Case1Graph.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casos_teste/Case2Graph.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casos_teste/Case3Graph.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casos_teste/Case4Graph.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casos_teste/Casos_Teste.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casos_teste/README.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +52,16 @@
       <option name="presentableId" value="Default" />
       <updated>1656274794983</updated>
       <workItem from="1656274802258" duration="1906000" />
-      <workItem from="1656277798950" duration="675000" />
+      <workItem from="1656277798950" duration="1170000" />
     </task>
+    <task id="LOCAL-00001" summary="Update README.md">
+      <created>1656278548398</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1656278548398</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -57,5 +77,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
   </component>
 </project>
