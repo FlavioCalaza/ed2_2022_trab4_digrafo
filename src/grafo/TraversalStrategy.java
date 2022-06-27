@@ -91,11 +91,11 @@ public abstract class TraversalStrategy
         var visitedPath = new StringBuilder();
         for (Vertex vertex : traversalPath)
         {
-            visitedPath.append(vertex).append(' ').
-                    append("Distance: ").append(getDistanceToVertex(getGraph().getVertices().indexOf(vertex))).append(' ').append("\n");
+            visitedPath.append(vertex).append("\n");
         }
         var traversalPathString = visitedPath.toString();
-        LOGGER.info(traversalPathString);
+        System.out.println(traversalPathString);
+        //LOGGER.info(traversalPathString);
     }
 
     protected void printShortestPath(Vertex source, Vertex destination)

@@ -4,6 +4,9 @@ import guru.nidi.graphviz.engine.Format;
 import guru.nidi.graphviz.engine.Graphviz;
 import guru.nidi.graphviz.model.MutableGraph;
 
+import grafo.AbstractGraph;
+import grafo.Vertex;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,8 +15,7 @@ import java.util.List;
 import static guru.nidi.graphviz.model.Factory.mutGraph;
 import static guru.nidi.graphviz.model.Factory.mutNode;
 
-public class DigraphList extends AbstractGraph
-{
+public class DigraphList extends AbstractGraph {
 
     public List<List<Edge>> getAdjacencyList() {
         return adjacencyList;
@@ -25,13 +27,12 @@ public class DigraphList extends AbstractGraph
 
     List<List<Edge>> adjacencyList;
 
-    protected DigraphList(List<Vertex> vertices) {
+    public DigraphList(List<Vertex> vertices) {
         super(vertices);
         initializeAdjacencyList();
     }
 
-    private void initializeAdjacencyList()
-    {
+    private void initializeAdjacencyList() {
         setAdjacencyList(new ArrayList<>());
         for (int i = 0; i < getNumberOfVertices(); i++) {
             getAdjacencyList().add(new ArrayList<>());
@@ -40,18 +41,20 @@ public class DigraphList extends AbstractGraph
 
     @Override
     public void addVertex(Vertex vertex) {
-
+        getVertices().add(vertex);
     }
 
     @Override
     public void removeVertex(Vertex vertex) {
-
+        if (!getVertices().contains(vertex)) {
+            throw new IllegalArgumentException("Vértice não foi encontrado");
+        }
+        getVertices().remove(vertex);
     }
 
     @Override
     public void addEdge(Vertex source, Vertex destination) {
-        if(!edgeExists(source, destination))
-        {
+        if (!edgeExists(source, destination)) {
             int sourceIndex = getVertices().indexOf(source);
             getAdjacencyList().get(sourceIndex).add(new Edge(destination));
         }
@@ -63,8 +66,7 @@ public class DigraphList extends AbstractGraph
     }
 
     @Override
-    public void removeEdge(Vertex source, Vertex destination)
-    {
+    public void removeEdge(Vertex source, Vertex destination) {
         int sourceIndex = getVertices().indexOf(source);
         List<Edge> sourceEdges = getAdjacencyList().get(sourceIndex);
         sourceEdges.removeIf(edge -> edge.getDestination() == destination);
@@ -74,10 +76,8 @@ public class DigraphList extends AbstractGraph
     public boolean edgeExists(Vertex source, Vertex destination) {
         int sourceIndex = getVertices().indexOf(source);
         List<Edge> sourceEdges = getAdjacencyList().get(sourceIndex);
-        for (Edge edge : sourceEdges )
-        {
-            if(edge.getDestination() == destination)
-            {
+        for (Edge edge : sourceEdges) {
+            if (edge.getDestination() == destination) {
                 return true;
             }
         }
@@ -88,17 +88,13 @@ public class DigraphList extends AbstractGraph
     public boolean hasAnyEdge(Vertex vertex) {
         int vertexIndex = getVertices().indexOf(vertex);
 
-        if(!getAdjacencyList().get(vertexIndex).isEmpty())
-        {
+        if (!getAdjacencyList().get(vertexIndex).isEmpty()) {
             return true;
         }
 
-        for (int i = 0; i < getNumberOfVertices(); i++)
-        {
-            for (Edge edge : getAdjacencyList().get(i))
-            {
-                if(edge.getDestination() == vertex)
-                {
+        for (int i = 0; i < getNumberOfVertices(); i++) {
+            for (Edge edge : getAdjacencyList().get(i)) {
+                if (edge.getDestination() == vertex) {
                     return true;
                 }
             }
@@ -109,12 +105,9 @@ public class DigraphList extends AbstractGraph
     @Override
     public int getFirstConnectedVertexIndex(Vertex vertex) {
         int vertexIndex = getVertices().indexOf(vertex);
-        if(getAdjacencyList().get(vertexIndex).isEmpty())
-        {
+        if (getAdjacencyList().get(vertexIndex).isEmpty()) {
             return -1;
-        }
-        else
-        {
+        } else {
             Vertex destinationVertex = getAdjacencyList().get(vertexIndex).get(0).getDestination();
             return getVertices().indexOf(destinationVertex);
         }
@@ -126,13 +119,11 @@ public class DigraphList extends AbstractGraph
         int currentAdjacentVertexIndex = 0;
         Vertex currentDestinationVertex = getVertices().get(currentEdge);
         List<Edge> destinations = getAdjacencyList().get(vertexIndex);
-        while(destinations.get(currentAdjacentVertexIndex).getDestination() != currentDestinationVertex)
-        {
+        while (destinations.get(currentAdjacentVertexIndex).getDestination() != currentDestinationVertex) {
             currentAdjacentVertexIndex++;
         }
         currentAdjacentVertexIndex++;
-        if(getAdjacencyList().get(vertexIndex).size() > currentAdjacentVertexIndex)
-        {
+        if (getAdjacencyList().get(vertexIndex).size() > currentAdjacentVertexIndex) {
             Vertex destinationVertex = getAdjacencyList().get(vertexIndex)
                     .get(currentAdjacentVertexIndex).getDestination();
             return getVertices().indexOf(destinationVertex);
@@ -141,24 +132,18 @@ public class DigraphList extends AbstractGraph
     }
 
     @Override
-    public void printInGraphviz(String fileName)
-    {
+    public void printInGraphviz(String fileName) {
         MutableGraph g = mutGraph("example1Digraph").setDirected(true);
 
-        for (var i = 0; i < getNumberOfVertices(); i++)
-        {
-            for (var j = 0; j < getAdjacencyList().get(i).size(); ++j)
-            {
+        for (var i = 0; i < getNumberOfVertices(); i++) {
+            for (var j = 0; j < getAdjacencyList().get(i).size(); ++j) {
                 int destinationIndex = getVertices().indexOf(getAdjacencyList().get(i).get(j).getDestination());
                 g.add(mutNode(getVertices().get(i).getName()).addLink(getVertices().get(destinationIndex).getName()));
             }
         }
-        try
-        {
-            Graphviz.fromGraph(g).width(GRAPHVIZ_IMAGE_WIDTH).render(Format.PNG).toFile(new File(GRAPHVIZ_FOLDER+fileName+GRAPHVIZ_FILE_EXTENSION));
-        }
-        catch ( IOException e )
-        {
+        try {
+            Graphviz.fromGraph(g).width(GRAPHVIZ_IMAGE_WIDTH).render(Format.PNG).toFile(new File(GRAPHVIZ_FOLDER + fileName + GRAPHVIZ_FILE_EXTENSION));
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -167,8 +152,7 @@ public class DigraphList extends AbstractGraph
     public float getDistance(Vertex source, Vertex destination) {
         int vertexIndex = getVertices().indexOf(source);
         for (Edge edge : getAdjacencyList().get(vertexIndex)) {
-            if(edge.getDestination() == destination)
-            {
+            if (edge.getDestination() == destination) {
                 return edge.getWeight();
             }
         }
@@ -176,34 +160,25 @@ public class DigraphList extends AbstractGraph
     }
 
     @Override
-    public Vertex getFirstConnectedVertex(Vertex vertex)
-    {
-        if(getAdjacencyList().get(getVertices().indexOf(vertex)).isEmpty())
-        {
+    public Vertex getFirstConnectedVertex(Vertex vertex) {
+        if (getAdjacencyList().get(getVertices().indexOf(vertex)).isEmpty()) {
             return null;
-        }
-        else
-        {
+        } else {
             return getAdjacencyList().get(getVertices().indexOf(vertex)).get(0).getDestination();
         }
     }
 
     @Override
-    public Vertex getNextConnectedVertex(Vertex source, Vertex currentConnection)
-    {
+    public Vertex getNextConnectedVertex(Vertex source, Vertex currentConnection) {
         int vertexIndex = getVertices().indexOf(source);
         var currentAdjacentVertexIndex = 0;
-        while(getAdjacencyList().get(vertexIndex).get(currentAdjacentVertexIndex).getDestination() != currentConnection)
-        {
+        while (getAdjacencyList().get(vertexIndex).get(currentAdjacentVertexIndex).getDestination() != currentConnection) {
             currentAdjacentVertexIndex++;
         }
         currentAdjacentVertexIndex++;
-        if(getAdjacencyList().get(vertexIndex).size() > currentAdjacentVertexIndex)
-        {
+        if (getAdjacencyList().get(vertexIndex).size() > currentAdjacentVertexIndex) {
             return getAdjacencyList().get(vertexIndex).get(currentAdjacentVertexIndex).getDestination();
-        }
-        else
-        {
+        } else {
             return null;
         }
     }
@@ -211,11 +186,9 @@ public class DigraphList extends AbstractGraph
     @Override
     public String toString() {
         var s = new StringBuilder();
-        for (var i = 0; i < getNumberOfVertices(); i++)
-        {
+        for (var i = 0; i < getNumberOfVertices(); i++) {
             s.append(i).append(": ");
-            for (var j = 0; j < getAdjacencyList().get(i).size(); ++j)
-            {
+            for (var j = 0; j < getAdjacencyList().get(i).size(); ++j) {
                 s.append(getAdjacencyList().get(i).get(j).getWeight()).append(" ");
             }
             s.append("\n");
