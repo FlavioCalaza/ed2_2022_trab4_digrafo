@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a38bfc8-4b15-44cd-8647-ba1a8eb0b519" name="Changes" comment="main" />
+    <list default="true" id="6a38bfc8-4b15-44cd-8647-ba1a8eb0b519" name="Changes" comment="...">
+      <change beforePath="$PROJECT_DIR$/src/grafo/TraversalStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grafo/TraversalStrategy.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,7 +69,7 @@
       <updated>1656274794983</updated>
       <workItem from="1656274802258" duration="1906000" />
       <workItem from="1656277798950" duration="4372000" />
-      <workItem from="1656362360519" duration="6495000" />
+      <workItem from="1656362360519" duration="7036000" />
     </task>
     <task id="LOCAL-00001" summary="Update README.md">
       <created>1656278548398</created>
@@ -118,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656369494269</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="...">
+      <created>1656370021710</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1656370021710</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,9 +149,9 @@
     <MESSAGE value="Casos de teste" />
     <MESSAGE value="TAD'S disponibilizadas pelo professor" />
     <MESSAGE value="Adaptação das TAD'S disponibilizadas pelo professor para o projeto" />
-    <MESSAGE value="..." />
     <MESSAGE value="main" />
-    <option name="LAST_COMMIT_MESSAGE" value="main" />
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
