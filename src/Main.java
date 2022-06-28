@@ -1,6 +1,6 @@
 import grafo.Vertex;
 import grafo.DigraphList;
-import grafo.BreadthFirstTraversal;
+import grafo.DepthFirstTraversal;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -27,7 +27,7 @@ public class Main {
             digraphList.addEdge(quests.get(verticeOrigem), quests.get(verticeDestino)); // Inserindo infos de vertices
         }
         int originVertex = scanner.nextInt(); // ID do vértice inicial da travessia (int)
-        BreadthFirstTraversal breadthFirstTraversal = new BreadthFirstTraversal(digraphList); //  Busca em largura disp pelo professor
-        breadthFirstTraversal.traverseGraph(quests.get(originVertex)); // Implementação da estratégia transversal
+        DepthFirstTraversal depthFirstTraversal = new DepthFirstTraversal(digraphList); //  Busca em largura disp pelo professor
+        depthFirstTraversal.traverseGraph(quests.get(originVertex)); // Implementação da estratégia transversal
     }
 }
