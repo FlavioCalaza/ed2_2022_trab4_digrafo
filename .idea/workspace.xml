@@ -75,7 +75,7 @@
       <workItem from="1656274802258" duration="1906000" />
       <workItem from="1656277798950" duration="4372000" />
       <workItem from="1656362360519" duration="10624000" />
-      <workItem from="1656435937704" duration="3766000" />
+      <workItem from="1656435937704" duration="4116000" />
     </task>
     <task id="LOCAL-00001" summary="Update README.md">
       <created>1656278548398</created>
@@ -154,7 +154,21 @@
       <option name="project" value="LOCAL" />
       <updated>1656439891827</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Implementação busca em profundidade">
+      <created>1656439924750</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1656439924750</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Implementação busca em profundidade">
+      <created>1656439947185</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1656439947185</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

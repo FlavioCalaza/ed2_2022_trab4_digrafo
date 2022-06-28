@@ -16,10 +16,11 @@ public class Main {
             // "i" irá assumir do ID da quest (int)
             String Name = scanner.nextLine(); // Nome da quest (String)
             String Description = scanner.nextLine(); // Descrição da quest (String)
-            Vertex vertex = new Vertex(i, Name, Description); // Inserindo dados no modelo de vertice (semelhante a struct)
+            Vertex vertex = new Vertex(i, Name, Description); // Inserindo dados no modelo de vertice
             quests.add(vertex); // Adicionando modelo vértice na lista de quests
         }
-        DigraphList digraphList = new DigraphList(quests); // Criação de DigraphList (disp pelo professor c/ pequenas mudanças)
+        DigraphList digraphList = new DigraphList(quests);  // Criação de DigraphList (disp pelo professor
+                                                            // c/ pequenas mudanças)
         int Na = scanner.nextInt(); // Na - Número de arestas que serão lidas a seguir (int)
         for (int i = 0; i < Na; i++) { // Interação para ler origens e destinos de cada vértice
             int verticeOrigem = scanner.nextInt(); // ID do vértice de origem da aresta(int)
@@ -27,7 +28,9 @@ public class Main {
             digraphList.addEdge(quests.get(verticeOrigem), quests.get(verticeDestino)); // Inserindo infos de vertices
         }
         int originVertex = scanner.nextInt(); // ID do vértice inicial da travessia (int)
-        DepthFirstTraversal depthFirstTraversal = new DepthFirstTraversal(digraphList); //  Busca em largura disp pelo professor adaptada para profundidade
+        DepthFirstTraversal depthFirstTraversal = new DepthFirstTraversal(digraphList); //  Busca em largura disp pelo
+                                                                                        // professor adaptada
+                                                                                        // para profundidade
         depthFirstTraversal.traverseGraph(quests.get(originVertex)); // Implementação da estratégia
     }
 }
