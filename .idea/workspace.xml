@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a38bfc8-4b15-44cd-8647-ba1a8eb0b519" name="Changes" comment="Ajustes finos na main">
-      <change afterPath="$PROJECT_DIR$/src/grafo/DepthFirstTraversal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/casos_teste/3.in" beforeDir="false" afterPath="$PROJECT_DIR$/casos_teste/3.in" afterDir="false" />
+    <list default="true" id="6a38bfc8-4b15-44cd-8647-ba1a8eb0b519" name="Changes" comment="Implementação busca em profundidade">
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +75,7 @@
       <workItem from="1656274802258" duration="1906000" />
       <workItem from="1656277798950" duration="4372000" />
       <workItem from="1656362360519" duration="10624000" />
-      <workItem from="1656435937704" duration="3606000" />
+      <workItem from="1656435937704" duration="3766000" />
     </task>
     <task id="LOCAL-00001" summary="Update README.md">
       <created>1656278548398</created>
@@ -150,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656372300219</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Implementação busca em profundidade">
+      <created>1656439891827</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1656439891827</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,7 +179,8 @@
     <MESSAGE value="..." />
     <MESSAGE value="Adaptação das TAD'S disponibilizadas pelo professor para o projeto" />
     <MESSAGE value="Ajustes finos na main" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajustes finos na main" />
+    <MESSAGE value="Implementação busca em profundidade" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementação busca em profundidade" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

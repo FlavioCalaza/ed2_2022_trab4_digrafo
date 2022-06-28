@@ -28,6 +28,6 @@ public class Main {
         }
         int originVertex = scanner.nextInt(); // ID do vértice inicial da travessia (int)
         DepthFirstTraversal depthFirstTraversal = new DepthFirstTraversal(digraphList); //  Busca em largura disp pelo professor
-        depthFirstTraversal.traverseGraph(quests.get(originVertex)); // Implementação da estratégia transversal
+        depthFirstTraversal.traverseGraph(quests.get(originVertex)); // Implementação da estratégia
     }
 }
