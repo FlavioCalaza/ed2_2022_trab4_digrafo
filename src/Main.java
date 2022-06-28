@@ -27,7 +27,7 @@ public class Main {
             digraphList.addEdge(quests.get(verticeOrigem), quests.get(verticeDestino)); // Inserindo infos de vertices
         }
         int originVertex = scanner.nextInt(); // ID do vértice inicial da travessia (int)
-        DepthFirstTraversal depthFirstTraversal = new DepthFirstTraversal(digraphList); //  Busca em largura disp pelo professor
+        DepthFirstTraversal depthFirstTraversal = new DepthFirstTraversal(digraphList); //  Busca em largura disp pelo professor adaptada para profundidade
         depthFirstTraversal.traverseGraph(quests.get(originVertex)); // Implementação da estratégia
     }
 }
