@@ -14,28 +14,22 @@ public class DepthFirstTraversal extends TraversalStrategy {
         markVertexAsVisited(sourceIndex);
         setDistanceToVertex(sourceIndex, 0);
         setPredecessorVertexIndex(sourceIndex, -1);
-
-        Stack<Vertex> vertexesToVisit = new Stack<>();
-        vertexesToVisit.add(source);
-
-        Vertex currentVisitedVertex;
-        int currentVisitedVertexIndex;
-        while (!vertexesToVisit.isEmpty()) {
-            currentVisitedVertex = vertexesToVisit.pop();
-            currentVisitedVertexIndex = getGraph().getVertices().indexOf(currentVisitedVertex);
-            if (currentVisitedVertex != null) {
-                var adjacentVertex = getGraph().getFirstConnectedVertex(currentVisitedVertex);
-                while (adjacentVertex != null) {
-                    int adjacentVertexIndex = getGraph().getVertices().indexOf(adjacentVertex);
-                    if (!hasVertexBeenVisited(adjacentVertexIndex)) {
-                        updateTraversalInfoForVertex(adjacentVertexIndex, currentVisitedVertexIndex);
-                        vertexesToVisit.add(adjacentVertex);
-                    }
-                    adjacentVertex = getGraph().getNextConnectedVertex(currentVisitedVertex, adjacentVertex);
-                }
-            }
+        var adjacentVertex = getGraph().getFirstConnectedVertex(source);
+        while (adjacentVertex != null) {
+            int adjacentVertexIndex = getGraph().getVertices().indexOf(adjacentVertex);
+            if (!hasVertexBeenVisited(adjacentVertexIndex))
+                traverseGraph(adjacentVertex);
+            adjacentVertex = getGraph().getNextConnectedVertex(source, adjacentVertex);
         }
-        printPath();
+    }
+
+    public void callDepthFirst(Vertex source) {
+        traverseGraph(source);
+        var visitedPath = new StringBuilder();
+        for (Vertex vertex : traversalPath)
+            visitedPath.append(vertex).append("\n");
+        var traversalPathString = visitedPath.toString();
+        System.out.println(traversalPathString);
     }
 
     private void updateTraversalInfoForVertex(int newVertexIndex, int previousVertexIndex) {
@@ -49,5 +43,4 @@ public class DepthFirstTraversal extends TraversalStrategy {
         setPredecessorVertexIndex(newVertexIndex, previousVertexIndex);
         setSuccessorVertexIndex(previousVertexIndex, newVertexIndex);
     }
-
 }

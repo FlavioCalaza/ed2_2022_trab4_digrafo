@@ -31,6 +31,6 @@ public class Main {
         DepthFirstTraversal depthFirstTraversal = new DepthFirstTraversal(digraphMatrix); //  Busca em largura disp pelo
                                                                                         // professor adaptada
                                                                                         // para profundidade
-        depthFirstTraversal.traverseGraph(quests.get(originVertex)); // Implementação da estratégia
+        depthFirstTraversal.callDepthFirst(quests.get(originVertex)); // Implementação da estratégia
     }
 }

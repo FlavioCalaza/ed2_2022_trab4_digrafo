@@ -12,7 +12,7 @@ public abstract class TraversalStrategy {
     private float[] distanceToVertices;
     private int[] predecessorVertexIndices;
     private int[] successorVertexIndices;
-    private List<Vertex> traversalPath;
+    public List<Vertex> traversalPath;
 
     public int[] getPredecessorArray() {
         return predecessorVertexIndices;
